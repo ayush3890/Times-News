@@ -1,0 +1,34 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&amp;subset=latin-ext" rel="stylesheet"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+    <link rel="stylesheet" href="/stylesheets/weather.css">
+<body>
+    <% include ./partials/navBar.ejs%>
+
+    <div class="weatherBar">
+        <p class="ele place"></p>
+        <p class="ele weatherType"></p>
+        <p class="ele temprature"></p>
+
+        <div class="weatherToday"></div>
+        <div class="weaklyTemp"></div>
+        <div class="extraBar">
+            <div class="one">
+                <div class="ele windDirec"></div>
+                <div class="ele windSpeed"></div>
+                <div class="ele groundLvl"></div>
+            </div>
+            <div class="two">
+                <div class="ele humidity"></div>
+                <div class="ele pressure"></div>
+                <div class="ele seaLvl"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script/weather.js"></script>
+</body>
+</html>

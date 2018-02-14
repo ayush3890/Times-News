@@ -1,0 +1,97 @@
+::selection {
+    background-color: #3DC7BE;
+    color: #fff;
+}
+body {
+    background-color: #BDE4F4;
+}
+
+.weatherBar {
+    width : 50%;
+    background-color: #E0FCFF;
+    margin : 0 25% 0 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    color: #153B44;
+    opacity:0;
+    transition: opacity 0.4s linear;
+}
+
+.ele {
+    margin:0;
+    font-size: 100%;
+}
+
+.weatherToday {
+    display: flex;
+    height:100px;
+}
+
+.weatherToday .miniWeather {
+    height:100%;
+    width:12.5%;
+    text-align: center;
+}
+
+.weatherToday .miniWeather .miniWeatherEle{
+    margin: 0;
+}
+
+.weaklyBar{
+    display: flex;
+    height:50px;
+    align-items: center;
+}
+
+.weaklyDay {
+    width:30%;
+    text-align: left;
+}
+
+.weaklyIcon {
+    width:40%;
+}
+
+.weaklyTempTemp{
+    display: flex;
+    justify-content: space-between;
+    width:30%;
+}
+
+.extraBar {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.extraBar .one,.two{
+    display: flex;
+}
+
+.extraBar .ele {
+    display: flex;
+    justify-content: space-between;
+    width:33.34%;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.extraBar .ele i{
+    font-size: 50px;
+}
+
+.ele:hover {
+    /*transform: scale(1.03);*/
+    transform: translate(3px, 3px) scale(1.02);
+}
+
+@media (max-width: 800px) {
+    .weatherBar {
+        width:85%;
+        margin: 0 5% 0 5%;
+        padding: 0 2.5% 0 2.5%;
+    }
+}

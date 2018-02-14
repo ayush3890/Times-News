@@ -1,0 +1,16 @@
+<div class="navigationBar">
+    <div class="navigationBarLeft">
+        <a href="/">Times News</a>
+    </div>
+
+    <div class="navigationBarRight">
+        <a href="/weather">Weather</a>
+        <a href="">About</a>
+        <% if(currentUser) { %>
+            <a href="/profile/<%= currentUser._id%>"><%= currentUser.username%></a>
+        <% } else {%>
+            <a href="/register">Login/SignUp</a>
+        <% }%>
+        <a href="">Contact Us</a>
+    </div>
+</div>

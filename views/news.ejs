@@ -1,0 +1,44 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&amp;subset=latin-ext" rel="stylesheet"></head>
+    <link rel="stylesheet" href="/stylesheets/showNews.css">
+<body>
+
+<% include ./partials/navBar.ejs%>
+
+<div class="outerBox">
+        <div class="category">
+            <h2>Category</h2>
+            <div class="catElement">
+                <h4>Sport's</h4>
+            </div>
+
+            <div class="catElement">
+                <h4>Bitcoin</h4>
+            </div>
+
+            <div class="catElement">
+                <h4>Khela</h4>
+            </div>
+            <% for(var i = 0; i < News.category.length; i++) { %>
+                <div class="catElement">
+                    <h4><%= category[i]%></h4>
+                </div>
+            <% } %>
+        </div>
+
+        <div class="mainNews">
+            <h1 class="element"><%= News.title%></h1>
+            <img class="element" src="<%= News.urlToImage%>" alt="">
+            <p class="element"><%= News.description%></p>
+            <p class="element">Source : <%= News.source.name%></p>
+            <p class="element">Author : <%= News.author%></p>
+            <p class="element">Date : <%= new Date(News.publishedAt.slice(0,9).split('-')[0], News.publishedAt.slice(0,9).split('-')[1] - 1, News.publishedAt.slice(0,9).split('-')[2]).toString().slice(0,15)%></p>
+            <p class="element">Views : 10</p>
+            <a class="element"href="<%= News.url%>">Read More</a>
+        </div>
+    </div>
+</body>
+</html>
