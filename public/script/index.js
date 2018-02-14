@@ -51,7 +51,7 @@ function fetchPostReq() {
 }
 
 function fetchGetReq() {
-    fetch('http://localhost:3000/abc', {mode: 'no-cors'})
+    fetch('http://localhost:3000/abc')
         .then(function(res) {
             return res.json();
         }).then(function(data) {
