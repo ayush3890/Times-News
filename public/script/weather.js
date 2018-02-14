@@ -8,7 +8,7 @@ function getLocation() {
 async function showPosition(position) {
     lat = position.coords.latitude;
     lon = position.coords.longitude;
-    var url =   'http://api.openweathermap.org/data/2.5/forecast?lang=en&' +
+    var url =   'https://api.openweathermap.org/data/2.5/forecast?lang=en&' +
             'lat=' + lat + '&' +
             'lon=' + lon + '&' +
             'APPID=' + '4352d58b4b05214fcbabc9781356b2ce';
