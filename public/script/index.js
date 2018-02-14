@@ -36,7 +36,9 @@ function fetchPostReq() {
 function fetchGetReq() {
     fetch('http://localhost:3000/abc', {mode: 'no-cors'})
         .then(function(res) {
-            return res.json();
+            if(res.ok) {
+                return res.json();
+            }
         }).then(function(data) {
             return data;
         }).then(function(val) {
