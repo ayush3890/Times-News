@@ -8,10 +8,38 @@ var express         = require('express'),
     User            = require('./models/user');
 
 mongoose.Promise    = global.Promise;
-mongoose.connect('mongodb://localhost/news');
+mongoose.connect('mongodb://ayush:harshit9290@ds235778.mlab.com:35778/times_news');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI('8a32519a7cf2421ea1b7f170e9797377');
+var news = require('./models/news');
+// setInterval(update,20000);
+// update();
+function update() {
+    newsapi.v2.everything({
+        sources: 'bbc-news,the-verge',
+        domains: 'bbc.co.uk, techcrunch.com',
+        language: 'en',
+        sortBy: 'relevancy',
+        page: 1
+    }).then(function(response) {
+        var a = response.articles;
+        console.log(a.length);
+        for(var i = 0; i < a.length; i++) {
+            var newsArticle = a[i];
+            news.create(newsArticle,function(err, createdNews) {
+                if(err) {
+                    console.log(err);
+                } else {
+                    createdNews.save();
+                }
+            })
+        }
+    });
+};
 
 app.use(require('express-session')({
     secret 				: 'asdaskjhdk dksajdklas jdjkl sjdl df',
@@ -46,6 +74,7 @@ app.get('/',function(req,res) {
             newsArray = comingNewsArray;
             initial = 0;
             final = 9;
+            console.log(newsArray.length);
             res.render('landing.ejs');
         }
     });
@@ -58,8 +87,19 @@ app.post('/', function(req, res) {
 
 app.get('/abc', function(req,res) {
     var temp = [];
+
+    if(initial == -1 || final == -1) {
+        res.send(temp);
+    }
+
     var k = 0;
+    console.log(initial + " , " + final);
     for(var i = initial; i < final; i++) {
+        if(i > newsArray.length) {
+            initial = final = -1;
+            continue;
+        }
+
         temp[k] = newsArray[i];
         k++;
     }

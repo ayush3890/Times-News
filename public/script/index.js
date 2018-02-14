@@ -1,7 +1,6 @@
 window.onscroll = scrollFunction;
 var newsGrid = document.querySelector(".newsGrid");
 var prevPos = 0;
-var raise = 1100;
 insideScroll();
 
 async function scrollFunction() {
@@ -13,7 +12,6 @@ async function scrollFunction() {
         if(y >= contentHeight) {
             await insideScroll();
         }
-        raise += 1100;
         prevPos = document.body.scrollTop;
     }
 }
@@ -42,7 +40,11 @@ function fetchGetReq() {
         }).then(function(data) {
             return data;
         }).then(function(val) {
-            addingNews(val);
+            if(val.length == 0) {
+                console.log('i');
+            } else {
+                addingNews(val);
+            }
         }).then(function() {
     });
 }
