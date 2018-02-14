@@ -51,7 +51,7 @@ function fetchPostReq() {
 }
 
 function fetchGetReq() {
-    fetch('http://localhost:3000/abc')
+    fetch('http://stark-beyond-53579.herokuapp.com/abc')
         .then(function(res) {
             return res.json();
         }).then(function(data) {
