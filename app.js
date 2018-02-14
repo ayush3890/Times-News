@@ -72,22 +72,20 @@ app.get('/',function(req,res) {
             console.log(err);
         } else {
             newsArray = comingNewsArray;
-            initial = 0;
-            final = 9;
             res.render('landing.ejs');
         }
     });
 });
 
 app.post('/', function(req, res) {
-    initial = final;
-    final += 9;
+    initial = req.body.initial;
+    final   = req.body.final;
+    console.log(initial + " , " + final);
 });
 
 app.get('/abc', function(req,res) {
     var temp = [];
     var k = 0;
-    console.log(initial + " , " + final);
     for(var i = initial; i < final; i++) {
         temp[k] = newsArray[i];
         k++;

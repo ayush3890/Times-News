@@ -1,6 +1,8 @@
 window.onscroll = scrollFunction;
 var newsGrid = document.querySelector(".newsGrid");
 var prevPos = 0;
+var initia = 0;
+var fina = 9;
 insideScroll();
 
 async function scrollFunction() {
@@ -19,34 +21,43 @@ async function scrollFunction() {
 async function insideScroll() {
     await fetchPostReq();
     await fetchGetReq();
+    i++;
 }
-
+var i = 0;
 function fetchPostReq() {
     // fetch('/', {
-    //     method: 'POST'
+    //     method: 'POST',
+    //     body : JSON.stringify({initial:initia,final:fina}),
+    //     headers: new Headers({
+    //         'Content-Type': 'application/json'
+    //     })
     // }).then(function (res) {
     //     console.log('post');
-    // })
+    // });
 
-    $.post("/", function(data, status){
-        // console.log("Data: " + data + "\nStatus: " + status);
-    });
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {console.log('ga')}
+    };
+    xhttp.open("POST", "/", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("initial=" + initia + "&" + "final=" + fina);
+    initia += 9;
+    fina += 9;
+
+    // $.post("/", function(data, status){
+    //     alert("Data: " + data + "\nStatus: " + status);
+    // });
 }
 
 function fetchGetReq() {
     fetch('http://localhost:3000/abc', {mode: 'no-cors'})
         .then(function(res) {
-            if(res.ok) {
-                return res.json();
-            }
+            return res.json();
         }).then(function(data) {
             return data;
         }).then(function(val) {
-            if(val.length == 0) {
-                console.log('i');
-            } else {
-                addingNews(val);
-            }
+            addingNews(val);
         }).then(function() {
     });
 }
