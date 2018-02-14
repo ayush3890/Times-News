@@ -74,7 +74,6 @@ app.get('/',function(req,res) {
             newsArray = comingNewsArray;
             initial = 0;
             final = 9;
-            console.log(newsArray.length);
             res.render('landing.ejs');
         }
     });
@@ -87,19 +86,9 @@ app.post('/', function(req, res) {
 
 app.get('/abc', function(req,res) {
     var temp = [];
-
-    if(initial == -1 || final == -1) {
-        res.send(temp);
-    }
-
     var k = 0;
     console.log(initial + " , " + final);
     for(var i = initial; i < final; i++) {
-        if(i > newsArray.length) {
-            initial = final = -1;
-            continue;
-        }
-
         temp[k] = newsArray[i];
         k++;
     }
