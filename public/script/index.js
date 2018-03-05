@@ -20,43 +20,69 @@ async function scrollFunction() {
 
 async function insideScroll() {
     await fetchPostReq();
-    await fetchGetReq();
-    i++;
+    // await fetchGetReq();
 }
-var i = 0;
+
 function fetchPostReq() {
-    // fetch('/', {
-    //     method: 'POST',
-    //     body : JSON.stringify({initial:initia,final:fina}),
-    //     headers: new Headers({
-    //         'Content-Type': 'application/json'
-    //     })
-    // }).then(function (res) {
-    //     console.log('post');
-    // });
+    //===============================
+        //Fetch Post request
+    //===============================
+    fetch('/', {
+        method: 'POST',
+        // body : JSON.stringify({initial:initia,final:fina}),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    }).then(function(res) {
+        return res.json();
+    }).then(function(data) {
+        return data;
+    }).then(function(val) {
+        console.log(val);
+        if(val[0] === null) {
+            console.log('database empty');
+            return;
+        }
+        addingNews(val);
+    }).then(function() {
+        "use strict";
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {console.log('ga')}
-    };
-    xhttp.open("POST", "/", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("initial=" + initia + "&" + "final=" + fina);
-    initia += 9;
-    fina += 9;
+    });
 
+    //===============================
+        //XML http request
+    //===============================
+    // var xhttp = new XMLHttpRequest();
+    // xhttp.onreadystatechange = function() {
+    //     if (this.readyState == 4 && this.status == 200) {console.log('ga')}
+    // };
+    // xhttp.open("POST", "/", true);
+    // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // console.log(initia + " " + fina);
+    // xhttp.send("initial=" + initia + "&" + "final=" + fina);
+    // initia += 9;
+    // fina += 9;
+
+    //===============================
+        //jQuery Post request
+    //===============================
     // $.post("/", function(data, status){
-    //     alert("Data: " + data + "\nStatus: " + status);
+    //     console.log(data);
     // });
+
 }
 
+//dont need this now
 function fetchGetReq() {
-    fetch('https://stark-beyond-53579.herokuapp.com/abc')
+    var url = 'https://stark-beyond-53579.herokuapp.com/abc';
+    var url1 = 'http://localhost:3000/abc';
+    fetch(url1)
         .then(function(res) {
             return res.json();
         }).then(function(data) {
             return data;
         }).then(function(val) {
+            console.log(val);
             addingNews(val);
         }).then(function() {
     });
@@ -64,20 +90,24 @@ function fetchGetReq() {
 
 async function addingNews(data) {
     for(var i = 0; i < data.length; i++) {
+
         var miniNews    = document.createElement("div");
         var image       = document.createElement("img");
-        var info        = document.createElement("p");
+        var heading       = document.createElement("div");
+        var info        = document.createElement("h1");
 
         miniNews.classList.add("miniNews");
         image.classList.add("image");
+        heading.classList.add("heading");
         info.classList.add("info");
 
         newsGrid.appendChild(miniNews);
         miniNews.appendChild(image);
-        miniNews.appendChild(info);
+        miniNews.appendChild(heading);
+        heading.appendChild(info);
 
         image.src = data[i].urlToImage;
-        info.textContent = data[i].description;
+        info.textContent = data[i].title;
         await addingListener(miniNews, data[i]);
     }
 }

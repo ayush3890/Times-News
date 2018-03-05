@@ -50,4 +50,5 @@ body {
 
 .mainNews img {
     border-radius : 3px;
+    height: 100vh;
 }

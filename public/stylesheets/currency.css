@@ -1,0 +1,21 @@
+body{
+    background-color: indianred;
+}
+
+datalist {
+    background-color: #1DCED8;
+    width: 100px;
+}
+
+input   {
+    background-color: #FEF778;
+}
+
+datalist {
+    background-color: #444806;
+}
+
+datalist option {
+    border: 1px solid green;
+    background-color: #1DCED8;
+}
