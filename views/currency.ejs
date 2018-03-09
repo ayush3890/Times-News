@@ -6,22 +6,130 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Currency</title>
-
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link rel="stylesheet" href="/stylesheets/main.css">
     <link rel="stylesheet" href="/stylesheets/currency.css">
 </head>
 <body>
     <%include ./partials/navBar.ejs%>
-    <h1>Currency Converter</h1>
 
-    <input list="browsers">
-    <datalist id="browsers">
-        <option value="Internet Explorer">Ayush</option>
-        <option value="Firefox">
-        <option value="Chrome">
-        <option value="Opera">
-        <option value="Safari">
-    </datalist>
+    <div class="container" ng-app="myApp" ng-controller="myCtrl">
+        <div class="m">
+            <div class="dropdown">
+                <button class="dropbtn btn1">Dropdown <i class="fas fa-angle-down"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <li value="INR">Indian Rupees</li>
+                    <li value="USD">US dollar</li>
+                    <li value="JPY">Japanese yen</li>
+                    <li value="BGN">Bulgarian lev</li>
+                    <li value="CZK">Czech koruna</li>
+                    <li value="DKK">Danish krone</li>
+                    <li value="GBP">Pound sterling</li>
+                    <li value="HUF">Hungarian forint</li>
+                    <li value="PLN">Polish zloty</li>
+                    <li value="RON">Romanian leu</li>
+                    <li value="SEK">Swedish krona</li>
+                    <li value="CHF">Swiss franc</li>
+                    <li value="ISK">Icelandic krona</li>
+                    <li value="NOK">Norwegian krone</li>
+                    <li value="HRK">Croatian kuna </li>
+                    <li value="RUB">Russian rouble</li>
+                    <li value="TRY">Turkish lira</li>
+                    <li value="AUD">Australian dollar</li>
+                    <li value="BRL">Brazilian real </li>
+                    <li value="CAD">Canadian dollar</li>
+                    <li value="CNY">Chinese yuan renminbi</li>
+                    <li value="HKD">Hong Kong dollar</li>
+                    <li value="IDR">Indonesian rupiah</li>
+                    <li value="ILS">Israeli shekel </li>
+                    <li value="KRW">South Korean won</li>
+                    <li value="MXN">Mexican peso </li>
+                    <li value="MYR">Malaysian ringgit </li>
+                    <li value="NZD">New Zealand dollar</li>
+                    <li value="PHP">Philippine piso</li>
+                    <li value="SGD">Singapore dollar</li>
+                    <li value="THB">Thai baht</li>
+                </div>
+            </div>
+            <div class="box">
+            <input type="number" id="inp1" ng-model="code11">
+            <p id="type1"></p>
+        </div>
+        </div>
 
+        <button id="refreshBtn"><i class="fas fa-sync-alt"></i></button>
+
+        <div class="m">
+            <div class="box">
+                <input type="number" id="inp2" ng-model="code22">
+                <p id="type2"></p>
+            </div>
+            <div class="dropdown">
+            <button class="dropbtn btn2">Dropdown <i class="fas fa-angle-down"></i></button>
+            <div id="ddid2" class="dropdown-content ddc2">
+            <li value="INR">Indian Rupees</li>
+            <li value="USD">US dollar</li>
+            <li value="JPY">Japanese yen</li>
+            <li value="BGN">Bulgarian lev</li>
+            <li value="CZK">Czech koruna</li>
+            <li value="DKK">Danish krone</li>
+            <li value="GBP">Pound sterling</li>
+            <li value="HUF">Hungarian forint</li>
+            <li value="PLN">Polish zloty</li>
+            <li value="RON">Romanian leu</li>
+            <li value="SEK">Swedish krona</li>
+            <li value="CHF">Swiss franc</li>
+            <li value="ISK">Icelandic krona</li>
+            <li value="NOK">Norwegian krone</li>
+            <li value="HRK">Croatian kuna </li>
+            <li value="RUB">Russian rouble</li>
+            <li value="TRY">Turkish lira</li>
+            <li value="AUD">Australian dollar</li>
+            <li value="BRL">Brazilian real </li>
+            <li value="CAD">Canadian dollar</li>
+            <li value="CNY">Chinese yuan renminbi</li>
+            <li value="HKD">Hong Kong dollar</li>
+            <li value="IDR">Indonesian rupiah</li>
+            <li value="ILS">Israeli shekel </li>
+            <li value="KRW">South Korean won</li>
+            <li value="MXN">Mexican peso </li>
+            <li value="MYR">Malaysian ringgit </li>
+            <li value="NZD">New Zealand dollar</li>
+            <li value="PHP">Philippine piso</li>
+            <li value="SGD">Singapore dollar</li>
+            <li value="THB">Thai baht</li>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="gridCol">
+            <div class="item">
+                <h2>50</h2>
+                <i class="fas fa-rupee-sign"></i>/
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="item">
+                <h2>50</h2>
+                <i class="fas fa-rupee-sign"></i>/
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+        <div class="gridCol">
+            <div class="item">
+                <h2>50</h2>
+                <i class="fas fa-rupee-sign"></i>/
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="item">
+                <h2>50</h2>
+                <i class="fas fa-rupee-sign"></i>/
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+    </div>
+    <!--<script src="/script/angular.js"></script>-->
+    <script src="/script/currency.js"></script>
 </body>
 </html>

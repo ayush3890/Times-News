@@ -1,21 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
 body{
-    background-color: indianred;
+    background-color: #FDFDEB;
 }
 
-datalist {
-    background-color: #1DCED8;
-    width: 100px;
+li {
+    list-style: none;
 }
 
-input   {
-    background-color: #FEF778;
+button {
+    outline-width: 0;
+    border-radius: 3px;
+    background-color: inherit;
+    border:none;
 }
 
-datalist {
-    background-color: #444806;
+input{
+    border:1px solid #A40A3C;
+    border-radius: 3px;
+    outline-width: 0;
+    padding: 10px;
+    letter-spacing: 1.5px;
+    font-family: Inconsolata;
+    text-align: center;
+    margin:0 1em 0 1em;
+    color: #3c0819;
+    -webkit-appearance: none;
 }
 
-datalist option {
-    border: 1px solid green;
-    background-color: #1DCED8;
+.container {
+    display: flex;
+    justify-content: center;
 }
+
+.dropbtn {
+    background-color: #A40A3C;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #C65F63;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FDFDEB;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top:10px;
+    color: #A40A3C;
+
+}
+
+.dropdown-content li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown li:hover {
+    background-color: #C65F63;
+    color:#FDFDEB;
+}
+
+.show {display:block;}
+
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+.box p{
+    margin:0;
+    padding: 5px 0 0 80%;
+    font-family: Inconsolata;
+    letter-spacing: 2px;
+    color: #3c0819;
+
+}
+
+.m {
+    display: flex;
+    margin:0 1em 0 1em;
+}
+
+#refreshBtn {
+    color: #3c0819;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    color: #3c0819;
+}
+
+.grid .gridCol {
+    display: flex;
+    justify-content: center;
+}
+
+.grid .gridCol .item {
+    border:1px solid #A40A3C;
+    border-radius: 3px;
+    margin:1em;
+    width: 200px;
+
+    display: flex;
+}
+
