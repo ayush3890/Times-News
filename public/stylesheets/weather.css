@@ -6,6 +6,13 @@ body {
     background-color: #BDE4F4;
 }
 
+#heading{
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    color: #153B44;
+    text-align: center;
+}
+
 .weatherBar {
     width : 50%;
     background-color: #E0FCFF;
@@ -23,6 +30,17 @@ body {
 .ele {
     margin:0;
     font-size: 100%;
+}
+
+.temprature {
+    font-family: 'Indie Flower', cursive;
+    font-size:100px;
+    margin:0;
+    letter-spacing: 10px;
+}
+
+.weatherType {
+    text-transform: capitalize;
 }
 
 .weatherToday {
@@ -85,7 +103,7 @@ body {
 
 .ele:hover {
     /*transform: scale(1.03);*/
-    transform: translate(3px, 3px) scale(1.02);
+    /*transform: translate(3px, 3px) scale(1.02);*/
 }
 
 @media (max-width: 800px) {

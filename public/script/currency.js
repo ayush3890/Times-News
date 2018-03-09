@@ -5,7 +5,7 @@ console.log('Currency');
 //         return t + $scope.code22;
 //     };
 // });
-
+var data = '';
 var code1 = null;
 var code2 = null;
 
@@ -55,7 +55,6 @@ document.querySelector('html').addEventListener('click', function (event) {
 
 setInterval(abc, 500);
 function abc() {
-    console.log('aa');
     var cone = code1;
     var ctwo = code2;
     if(code1 !== null && code2 !== null) {
@@ -79,22 +78,26 @@ function abc() {
                     inp2.value = val2;
                 } else {
                     inp1.value = val1*text1;
-                    inp2.value = Math.round((val2*text1) * 100) / 100;
+                    inp2.value = Math.round((val2*text1) * 1000) / 1000;
                 }
 
                 document.getElementById('type1').textContent = cone;
                 document.getElementById('type2').textContent = ctwo;
         });
-        code1 = null;
-        code2 = null;
     }
 }
-
-function fetchreq(cone, ctwo) {
+fetchreq();
+function fetchreq() {
     fetch('https://api.fixer.io/latest')
         .then(function (response) {
             return response.json();
-        }).then(function (data) {
+        }).then(function (d) {
+            document.getElementById('dollar').textContent = Math.round(((1 / d.rates.USD)*d.rates.INR) * 1000) / 1000;
+            document.getElementById('pound').textContent = Math.round(((1 / d.rates.GBP)*d.rates.INR) * 1000) / 1000;
+            document.getElementById('euro').textContent = Math.round((d.rates.INR) * 1000) / 1000;
+            document.getElementById('yen').textContent = Math.round(((1 / d.rates.JPY)*d.rates.INR) * 1000) / 1000;
+        }).then(function () {
+
     });
 }
 

@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+::selection {
+    background-color: #F67280;
+    color: #FDFDEB;
+}
 
 body{
     background-color: #FDFDEB;
@@ -26,6 +30,13 @@ input{
     margin:0 1em 0 1em;
     color: #3c0819;
     -webkit-appearance: none;
+}
+
+#heading{
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    color: #3c0819;
+    text-align: center;
 }
 
 .container {
@@ -84,7 +95,7 @@ input{
 
 .box p{
     margin:0;
-    padding: 5px 0 0 80%;
+    padding: 5px 0 0 75%;
     font-family: Inconsolata;
     letter-spacing: 2px;
     color: #3c0819;
@@ -118,5 +129,19 @@ input{
     width: 200px;
 
     display: flex;
+    font-size: 1em;
+    letter-spacing: 5px;
+    align-items: baseline;
+    height:100px;
+    justify-content: center;
+    align-self: center;
 }
 
+.grid .gridCol .item h2{
+    margin:0;
+}
+
+.grid .gridCol .item:hover {
+    background-color: #A40A3C;
+    color: #FDFDEB;
+}

@@ -1,0 +1,56 @@
+body {
+    background-color: #FFC97C;
+}
+
+::selection {
+    background-color: #444806;
+    color: #FDFDEB;
+}
+
+.navigationBar div a {
+    text-decoration: none;
+    color:#283149;
+}
+
+#nextBtn {
+    background-color: #194769;
+    outline: none;
+    border:none;
+    border-radius: 3px;
+    height:50px;
+    width:150px;
+    font-size: 20px;
+    color: #FDFDEB;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0 8em;
+}
+
+.container h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    color: #194769;
+    text-align: center;
+}
+
+.container #quote {
+    font-size: 30px;
+    text-align: center;
+    color: #FDFDEB;
+}
+
+.container #author {
+    align-self: flex-end;
+    font-size: 20px;
+    text-align: right;
+}
+
+#nextBtn:hover {
+    background-color: #1DCED8;
+    color: #194769;
+}

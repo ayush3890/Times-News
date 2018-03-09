@@ -12,7 +12,7 @@
 </head>
 <body>
     <%include ./partials/navBar.ejs%>
-
+    <h1 id="heading">Currency Converter by Times News</h1>
     <div class="container" ng-app="myApp" ng-controller="myCtrl">
         <div class="m">
             <div class="dropdown">
@@ -106,26 +106,26 @@
     <div class="grid">
         <div class="gridCol">
             <div class="item">
-                <h2>50</h2>
+                <h2 id="dollar"></h2>
                 <i class="fas fa-rupee-sign"></i>/
                 <i class="fas fa-dollar-sign"></i>
             </div>
             <div class="item">
-                <h2>50</h2>
+                <h2 id="pound"></h2>
                 <i class="fas fa-rupee-sign"></i>/
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-pound-sign"></i>
             </div>
         </div>
         <div class="gridCol">
             <div class="item">
-                <h2>50</h2>
+                <h2 id="euro"></h2>
                 <i class="fas fa-rupee-sign"></i>/
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-euro-sign"></i>
             </div>
             <div class="item">
-                <h2>50</h2>
+                <h2 id="yen"></h2>
                 <i class="fas fa-rupee-sign"></i>/
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-yen-sign"></i>
             </div>
         </div>
     </div>

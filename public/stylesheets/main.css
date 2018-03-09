@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Open+Sans|Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Open+Sans|Playfair+Display|Indie+Flower');
+
 body {
     margin:0;
     font-family: 'Open Sans', sans-serif;
-    background-color: #FEF778;
+    background-color: #FAFFB8;
 }
 
 .navigationBar {
@@ -23,7 +24,7 @@ body {
 
 .navigationBar div a {
     text-decoration: none;
-    color:#000;
+    color:#4D4545;
     padding: 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease-out;
@@ -45,6 +46,7 @@ body {
 }
 
 .heading {
+    color: #4D4545;
     background-color: #fff;
     min-height:100px;
     width:80%;
