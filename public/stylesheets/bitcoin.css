@@ -1,0 +1,20 @@
+body {
+    background-color: #dafb8e;
+}
+
+#heading{
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    color: #CC376D;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container #price {
+    text-align: center;
+    color: #4A772F;
+}

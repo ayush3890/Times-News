@@ -8,7 +8,7 @@ var express         = require('express'),
     updateDb        = require('./updateDatabase');
 
 mongoose.Promise    = global.Promise;
-mongoose.connect('mongodb://ayush:harshit9290@ds235778.mlab.com:35778/times_news');
+mongoose.connect('mongodb://ayush3890:ayush3890@ds261088.mlab.com:61088/times_news');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

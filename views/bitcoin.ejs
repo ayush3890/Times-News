@@ -5,15 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Services</title>
+    <title>TimesNews-Bitcoin</title>
     <link rel="stylesheet" href="/stylesheets/main.css">
-    <link rel="stylesheet" href="/stylesheets/servicesPage.css">
+    <link rel="stylesheet" href="/stylesheets/bitcoin.css">
 </head>
 <body>
     <%include ./partials/navBar.ejs%>
-    <a href="/weather">Weather</a>
-    <a href="/currency">Currency Rates</a>
-    <a href="/randomQuotes">Random Quotes</a>
-    <a href="/bitcoin">Bitcoin</a>
+    <div class="container">
+        <h1 id="heading">Bitcoin price's by Times News</h1>
+        <h1 id="price">100Rs</h1>
+    </div>
+    <script src="/script/bitcoin.js"></script>
 </body>
 </html>

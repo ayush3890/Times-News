@@ -12,4 +12,9 @@ router.get('/currency', function(req, res) {
 router.get('/randomQuotes', function(req, res) {
     res.render('randQuotes.ejs');
 });
+
+router.get('/bitcoin', function (req, res) {
+    res.render('bitcoin.ejs');
+});
+
 module.exports = router;

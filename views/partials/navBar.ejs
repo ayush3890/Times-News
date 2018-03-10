@@ -7,7 +7,7 @@
         <a href="/services">Other Services</a>
         <a href="">About</a>
         <% if(currentUser) { %>
-            <a href="/profile/<%= currentUser._id%>"><%= currentUser.username%></a>
+        <a href="/profile/<%= currentUser._id%>"><i class="fas fa-user"></i> <%= currentUser.username%></a>
         <% } else {%>
             <a href="/register">Login/SignUp</a>
         <% }%>
